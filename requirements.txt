@@ -1,0 +1,17 @@
+blinker==1.9.0
+certifi==2024.8.30
+click==8.1.8
+distlib==0.3.8
+filelock==3.16.1
+flask==3.1.0
+importlib-metadata==8.5.0
+itsdangerous==2.2.0
+jinja2==3.1.5
+MarkupSafe==3.0.2
+packaging==24.1
+pipenv==2024.0.3
+platformdirs==4.3.6
+PythonTurtle==0.3.2
+virtualenv==20.26.6
+werkzeug==3.1.3
+zipp==3.21.0
