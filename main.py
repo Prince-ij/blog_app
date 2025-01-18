@@ -13,7 +13,7 @@ from forms import CreatePostForm, Register, LoginForm, CommentForm
 
 app = Flask(__name__)
 base_url = os.path.abspath(os.path.dirname(__file__))
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.urandom(24)
 ckeditor = CKEditor(app)
 login_manager = LoginManager()
 Bootstrap(app)
@@ -22,7 +22,7 @@ login_manager.init_app(app)
 
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgresql://my_first_db_zoii_user:fy6cWNOWXjwOMaAYWMRtNNZ6fCp6JzEP@dpg-cu5s2aogph6c73c0pao0-a.oregon-postgres.render.com/my_first_db_zoii')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
