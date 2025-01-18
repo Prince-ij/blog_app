@@ -22,8 +22,7 @@ login_manager.init_app(app)
 
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(base_url, 'blog.db')}'
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(base_url, 'users.db')}'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgresql://my_first_db_zoii_user:fy6cWNOWXjwOMaAYWMRtNNZ6fCp6JzEP@dpg-cu5s2aogph6c73c0pao0-a.oregon-postgres.render.com/my_first_db_zoii')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
